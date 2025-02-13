@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Greeting</title>
+</head>
+<body>
+    <h1 id="greeting"></h1>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const name = urlParams.get('name');
+        const message = urlParams.get('message');
+        
+        if (name && message) {
+            document.getElementById('greeting').textContent = `Hello ${name}! ${message}!`;
+        } else {
+            document.getElementById('greeting').textContent = 'Please provide both name and message parameters';
+        }
+    </script>
+</body>
+</html> 
